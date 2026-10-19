@@ -1,0 +1,1224 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Lampiran Topik 7 Clinical Leadership</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,500&display=swap">
+<style>
+/* Layout: lembar penilaian diri berwarna lampu lalu lintas; lima ranah berpita warna NHS di kiri, panel hitungan menempel di kanan; satu kolom di ponsel. */
+:root {
+  --bg: #EEF2F5;
+  --surface: #FFFFFF;
+  --surface-2: #F5F7F9;
+  --ink: #1D2328;
+  --muted: #59646C;
+  --line: #CED6DC;
+  --accent: #006BA8;
+  --accent-ink: #FFFFFF;
+  --g: #2E8B3A; --o: #D07A08; --r: #C8322B;
+  --g-soft: #DDF0D6; --o-soft: #FBE6C8; --r-soft: #F7D6D3;
+  --on-sel: #FFFFFF;
+  --focus: #0A7CC2;
+  --wm: rgba(29, 35, 40, .30);
+  --on-bad: #FFFFFF;
+  --f-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r-rad: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0F1418; --surface: #161E24; --surface-2: #1C262D; --ink: #E4EAEE; --muted: #9CA8B0; --line: #2C3943;
+  --accent: #5DB3E8; --accent-ink: #06202F; --g: #67C774; --o: #F0A240; --r: #F07D73;
+  --g-soft: #1D3522; --o-soft: #3A2C17; --r-soft: #3D211F; --on-sel: #0C1418; --focus: #7CC6F0; --wm: rgba(228, 234, 238, .26); --on-bad: #2A0F0B; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0F1418; --surface: #161E24; --surface-2: #1C262D; --ink: #E4EAEE; --muted: #9CA8B0; --line: #2C3943;
+  --accent: #5DB3E8; --accent-ink: #06202F; --g: #67C774; --o: #F0A240; --r: #F07D73;
+  --g-soft: #1D3522; --o-soft: #3A2C17; --r-soft: #3D211F; --on-sel: #0C1418; --focus: #7CC6F0; --wm: rgba(228, 234, 238, .26); --on-bad: #2A0F0B; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1260px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.watermark { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 12px); right: max(16px, env(safe-area-inset-right, 0px)); z-index: 30;
+  font-family: var(--f-display); font-weight: 300; font-style: italic; font-size: 13px; letter-spacing: .04em; color: var(--wm);
+  pointer-events: none; user-select: none; white-space: nowrap; }
+
+header.mast { padding-block: 44px 22px; }
+.eyebrow { margin: 0 0 10px; font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-family: var(--f-display); font-weight: 500; font-size: clamp(30px, 5vw, 46px); line-height: 1.05; letter-spacing: -.01em; text-wrap: balance; }
+h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+.lede { margin: 12px 0 0; max-width: 70ch; color: var(--muted); }
+.lights { display: inline-flex; gap: 4px; vertical-align: middle; margin-right: 6px; }
+.lights i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px; align-items: start; padding-block: 0 48px; }
+.col { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-rad); }
+.ident { padding: 18px 18px 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.panel h2 { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 19px; }
+.ident h2 { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.field.wide { grid-column: 1 / -1; }
+.field > label, .field > .lbl { font-weight: 700; font-size: 13.5px; }
+.hint { font-size: 12.5px; color: var(--muted); }
+input[type=text], input[type=date], textarea { font: inherit; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; min-width: 0; width: 100%; }
+textarea { resize: vertical; min-height: 84px; line-height: 1.45; }
+input:focus-visible, textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
+.field.invalid input, .field.invalid textarea { border-color: var(--r); background: var(--r-soft); }
+.err-inline { font-size: 12.5px; color: var(--r); }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg label { position: relative; cursor: pointer; }
+.seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.seg span { display: inline-block; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); font-size: 14px; }
+.seg input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.seg input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 2px; }
+.field.invalid .seg span { border-color: var(--r); }
+
+.brief { padding: 16px 18px; background: var(--surface-2); border: 1px dashed var(--line); border-radius: var(--r-rad); font-size: 14px; color: var(--muted); display: flex; flex-direction: column; gap: 8px; }
+.brief p { margin: 0; max-width: 78ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--ink); font-size: 13.5px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; vertical-align: -1px; margin-right: 6px; }
+.dot.g { background: var(--g); } .dot.o { background: var(--o); } .dot.r { background: var(--r); }
+.toggle { display: inline-flex; gap: 8px; align-items: center; font-size: 13.5px; color: var(--ink); cursor: pointer; }
+.toggle input { accent-color: var(--accent); }
+
+.domain { border: 1px solid var(--line); border-radius: var(--r-rad); background: var(--surface); overflow: hidden; scroll-margin-top: 16px; }
+.dhead { padding: 14px 16px 12px; border-top: 6px solid var(--dc); display: flex; flex-direction: column; gap: 4px; }
+.dhead h2 { font-size: 21px; }
+.dhead h2 .dn { color: var(--dc); font-family: var(--f-num); font-weight: 600; font-size: 15px; margin-right: 8px; }
+.dhead .idn { font-size: 13px; color: var(--muted); }
+.dtally { font-size: 12.5px; color: var(--muted); font-family: var(--f-num); }
+.el { padding: 8px 16px 6px; background: var(--surface-2); background: color-mix(in srgb, var(--dc) 14%, var(--surface)); border-top: 1px solid var(--line); font-weight: 700; font-size: 14px; }
+.el small { font-weight: 400; color: var(--muted); margin-left: 6px; }
+.st { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; align-items: center; padding: 12px 16px; border-top: 1px solid var(--line); scroll-margin-top: 80px; }
+.st .q { min-width: 0; }
+.st .en { margin: 0; display: flex; gap: 10px; align-items: baseline; }
+.st .num { font-family: var(--f-num); font-weight: 600; font-size: 13px; color: var(--muted); min-width: 2ch; text-align: right; }
+.st .tr { margin: 3px 0 0 calc(2ch + 10px); font-size: 13px; color: var(--muted); }
+.hide-tr .st .tr { display: none; }
+.opts { display: grid; grid-template-columns: repeat(3, 96px); gap: 6px; }
+.opt { position: relative; cursor: pointer; }
+.opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.opt span { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); font-size: 11.5px; line-height: 1.15; text-align: center; color: var(--muted); }
+.opt span i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; }
+.opt.g span i { color: var(--g); } .opt.o span i { color: var(--o); } .opt.r span i { color: var(--r); }
+.opt.g input:checked + span { background: var(--g); border-color: var(--g); color: var(--on-sel); }
+.opt.o input:checked + span { background: var(--o); border-color: var(--o); color: var(--on-sel); }
+.opt.r input:checked + span { background: var(--r); border-color: var(--r); color: var(--on-sel); }
+.opt input:checked + span i { background: currentColor; color: var(--on-sel); }
+.opt input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 2px; }
+.opt:hover span { border-color: var(--ink); }
+.st.missing { box-shadow: inset 4px 0 0 var(--r); background: var(--r-soft); }
+
+.plan { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.plan h3 { margin: 6px 0 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.plan .lab { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.plan .lab label { font-weight: 700; font-size: 14px; }
+.cnt { font-family: var(--f-num); font-size: 11.5px; color: var(--muted); }
+.cnt.full { color: var(--r); }
+.linkbtn { font: inherit; font-size: 12.5px; background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; font-weight: 400; }
+.steps { display: flex; flex-direction: column; gap: 12px; }
+.step { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 10px 14px; }
+.step .side { display: flex; flex-direction: column; gap: 8px; }
+.step .side .ap { display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; }
+.step .side .ap label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+.step .side .ap input { accent-color: var(--accent); }
+.step .head { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 13.5px; }
+
+.sum { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); padding: 18px; display: flex; flex-direction: column; gap: 16px; max-height: calc(100vh - 32px); overflow: auto; }
+.prog .row { display: flex; justify-content: space-between; font-size: 13.5px; }
+.prog .row b { font-family: var(--f-num); font-weight: 600; }
+.stack { display: flex; height: 12px; border-radius: 99px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); margin-top: 6px; }
+.stack i { display: block; height: 100%; width: 0; transition: width .2s ease; }
+.stack .sg { background: var(--g); } .stack .so { background: var(--o); } .stack .sr { background: var(--r); }
+.overall { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.overall div { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+.overall b { font-family: var(--f-num); font-size: 24px; line-height: 1; font-variant-numeric: tabular-nums; }
+.overall span { font-size: 12px; color: var(--muted); }
+.overall .og b { color: var(--g); } .overall .oo b { color: var(--o); } .overall .or b { color: var(--r); }
+.dlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.dlist li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 8px; font-size: 13px; }
+.dlist .nm { min-width: 0; }
+.dlist .nm b { font-family: var(--f-num); color: var(--dc); margin-right: 4px; }
+.dlist .ct { font-family: var(--f-num); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dlist .stack { grid-column: 1 / -1; height: 8px; margin: 0; }
+.dlist .pillrow { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+.pnote { font-size: 12px; color: var(--muted); }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; letter-spacing: .03em; border: 1px solid currentColor; }
+.pill.kembang { color: var(--r); background: var(--r-soft); }
+.pill.kuat { color: var(--g); background: var(--g-soft); }
+.pill.seimbang { color: var(--o); background: var(--o-soft); }
+.pill.none { color: var(--muted); background: var(--surface-2); }
+.interp { display: flex; flex-direction: column; gap: 9px; font-size: 13.5px; }
+.interp h3 { margin: 4px 0 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.interp p { margin: 0; }
+.interp .empty { color: var(--muted); }
+.actions { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; }
+.check { display: flex; gap: 8px; align-items: flex-start; font-size: 13.5px; cursor: pointer; }
+.check input { margin-top: 3px; accent-color: var(--accent); }
+.btns { display: flex; gap: 8px; flex-wrap: wrap; }
+button { font: inherit; cursor: pointer; border-radius: 8px; padding: 10px 16px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); font-weight: 700; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); flex: 1 1 auto; }
+button.danger { background: var(--r); border-color: var(--r); color: var(--on-bad); }
+button.small { padding: 6px 10px; font-size: 12.5px; font-weight: 400; }
+button:focus-visible, .linkbtn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+.confirm { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--r); border-radius: 8px; background: var(--r-soft); font-size: 13.5px; }
+.msg { font-size: 13.5px; padding: 10px 12px; border-radius: 8px; overflow-wrap: anywhere; }
+.msg.err { background: var(--r-soft); border: 1px solid var(--r); }
+.msg.ok { background: var(--g-soft); border: 1px solid var(--g); }
+.msg ul { margin: 6px 0 0; padding-left: 18px; }
+.saved { font-size: 12px; color: var(--muted); margin: 0; }
+.notes { padding: 18px; font-size: 13px; color: var(--muted); }
+.notes h2 { font-size: 16px; color: var(--ink); margin-bottom: 8px; }
+.notes ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.notes p { margin: 10px 0 0; max-width: 90ch; }
+.dock { display: none; }
+
+@media (max-width: 1020px) { .layout { grid-template-columns: minmax(0, 1fr); } .sum { position: static; max-height: none; overflow: visible; } }
+@media (max-width: 720px) {
+  header.mast { padding-block: 52px 16px; }
+  .ident { grid-template-columns: minmax(0, 1fr); }
+  .st { grid-template-columns: minmax(0, 1fr); }
+  .opts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .st .tr { margin-left: 0; }
+  .step { grid-template-columns: minmax(0, 1fr); }
+  .dock { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; gap: 10px; align-items: center; justify-content: space-between;
+    padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    background: var(--surface); border-top: 1px solid var(--line); font-size: 13.5px; }
+  .dock b { font-family: var(--f-num); }
+  .dock button { padding: 8px 14px; flex: 0 0 auto; }
+  body { padding-bottom: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .stack i { transition: none; } }
+</style>
+
+<div class="watermark" aria-hidden="true">Dr.dr. Tirta Darmawan Susanto,MKes</div>
+
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">BRP Modul Pelayanan Paripurna 2 &middot; Prodi Sp.KKLP FKUI &middot; Lampiran Topik 7</p>
+    <h1>Clinical Leadership <em>self assessment tool</em></h1>
+    <p class="lede"><span class="lights" aria-hidden="true"><i style="background:var(--g)"></i><i style="background:var(--o)"></i><i style="background:var(--r)"></i></span>Isi 40 pernyataan Clinical Leadership Competency Framework (NHS Leadership Academy, 2012) dengan tiga warna. Aplikasi menjumlahkan warna per ranah, menyusun interpretasi sesuai petunjuk alat, dan membantu mengisi Personal Action Plan. Hasilnya dapat diunduh sebagai .docx yang ringkas dan mudah diedit.</p>
+  </header>
+
+  <main class="layout">
+    <div class="col" id="formcol">
+      <section class="panel ident" aria-labelledby="h-ident">
+        <h2 id="h-ident">Identitas</h2>
+        <div class="field" id="f-nama">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" maxlength="150" autocomplete="name" placeholder="Nama lengkap dan gelar">
+          <span class="err-inline" id="e-nama"></span>
+        </div>
+        <div class="field" id="f-npm">
+          <label for="npm">NPM</label>
+          <input type="text" id="npm" maxlength="20" inputmode="numeric" autocomplete="off" placeholder="Contoh: 2306334074">
+          <span class="err-inline" id="e-npm"></span>
+        </div>
+        <div class="field wide" id="f-rater">
+          <span class="lbl" id="l-rater">Diisi oleh</span>
+          <div class="seg" role="radiogroup" aria-labelledby="l-rater" id="raters"></div>
+          <span class="err-inline" id="e-rater"></span>
+        </div>
+        <div class="field" id="f-penilai" hidden>
+          <label for="penilai">Nama penilai</label>
+          <input type="text" id="penilai" maxlength="120" autocomplete="off" placeholder="Opsional">
+          <span class="hint">Alat NHS menganjurkan atasan atau kolega ikut menilai, lalu hasilnya dibandingkan dengan penilaian diri.</span>
+        </div>
+        <div class="field" id="f-tanggal">
+          <label for="tanggal">Tanggal pengisian</label>
+          <input type="date" id="tanggal">
+        </div>
+      </section>
+
+      <section class="brief" aria-label="Petunjuk pengisian">
+        <p><strong>Look at statements below.</strong> On the scale next to each statement, choose a rating that reflects how frequently it applies to you. Total your scores after each domain and reflect on how you have scored yourself.</p>
+        <div class="legend"><span><i class="dot g"></i>A lot of the time</span><span><i class="dot o"></i>Some of the time</span><span><i class="dot r"></i>Very little / None of the time</span></div>
+        <label class="toggle"><input type="checkbox" id="showtr" checked> Tampilkan terjemahan bebas bahasa Indonesia di bawah setiap pernyataan</label>
+      </section>
+
+      <div id="domains" class="col"></div>
+
+      <section class="panel plan" id="plan" aria-labelledby="h-plan">
+        <h2 id="h-plan">Personal Action Plan</h2>
+        <p class="hint" style="margin:0">Bagian ini opsional. Kolom yang dibiarkan kosong tetap muncul di .docx sebagai tabel kosong yang dapat dilengkapi di Word. Batas karakter mengikuti formulir NHS.</p>
+        <p class="hint" style="margin:0"><strong>Petunjuk alat NHS (hlm. 7):</strong> rumuskan rencana dalam istilah SMART; tentukan orang yang dapat diajak berdiskusi dan membantu; nilai hambatan dan cara mengatasinya; manfaatkan kekuatan yang dimiliki; kenali sumber daya internal dan eksternal; tulis langkah aksi beserta tanggal penyelesaiannya; tetapkan tanggal evaluasi kemajuan.</p>
+        <h3>Action Plan &ndash; part one</h3>
+        <div id="p1"></div>
+        <h3>Action Plan &ndash; part one continued</h3>
+        <div class="field" id="f-plan-need">
+          <div class="lab"><label for="plan-need">Development Need</label><span class="cnt" id="c-plan-need"></span></div>
+          <input type="text" id="plan-need" maxlength="150" placeholder="Pilih satu kebutuhan pengembangan dari Key priorities">
+        </div>
+        <div id="pneed" class="col" style="gap:14px"></div>
+        <h3>Action Plan &ndash; part two</h3>
+        <div class="steps" id="steps"></div>
+        <div><button type="button" class="small" id="add-step">+ Tambah action step</button></div>
+        <h3>Review</h3>
+        <div class="field">
+          <label for="plan-review">When will you review your progress towards your goals? (Please specify a date).</label>
+          <input type="date" id="plan-review">
+        </div>
+      </section>
+
+      <section class="panel notes" aria-labelledby="h-src">
+        <h2 id="h-src">Dasar perhitungan dan sumber</h2>
+        <ol id="refs"></ol>
+        <p>Alat NHS tidak memberi bobot angka. Total setiap ranah adalah jumlah lingkaran hijau, oranye, dan merah (pada formulir PDF aslinya tersedia kolom "Green Total", "Orange Total", dan "Red Total"). Petunjuk interpretasi berbunyi: ranah dengan "mainly red and orange circles" dapat menjadi area pengembangan, sedangkan lingkaran hijau perlu diperiksa agar tidak menjadi overplayed strength. Aplikasi menafsirkan "mainly" sebagai sedikitnya 5 dari 8 pernyataan.</p>
+      </section>
+    </div>
+
+    <aside class="panel sum" id="summary" aria-labelledby="h-sum">
+      <h2 id="h-sum">Hitungan</h2>
+      <div class="prog">
+        <div class="row"><span>Pernyataan terisi</span><b id="p-count">0/40</b></div>
+        <div class="stack" aria-hidden="true"><i class="sg" id="s-g"></i><i class="so" id="s-o"></i><i class="sr" id="s-r"></i></div>
+      </div>
+      <div class="overall">
+        <div class="og"><b id="o-g">0</b><span>hijau</span></div>
+        <div class="oo"><b id="o-o">0</b><span>oranye</span></div>
+        <div class="or"><b id="o-r">0</b><span>merah</span></div>
+      </div>
+      <ul class="dlist" id="dlist"></ul>
+      <div class="interp" id="interp" aria-live="polite"><p class="empty">Interpretasi tersusun setelah ke-40 pernyataan terisi.</p></div>
+      <div class="actions">
+        <label class="check"><input type="checkbox" id="inclplan" checked> <span>Sertakan Personal Action Plan pada .docx</span></label>
+        <div class="btns" id="btns">
+          <button type="button" class="primary" id="btn-dl">Unduh .docx</button>
+          <button type="button" id="btn-reset">Reset</button>
+        </div>
+        <div class="confirm" id="confirm" hidden>
+          <span>Hapus semua isian, termasuk nama, NPM, 40 jawaban, dan rencana aksi?</span>
+          <div class="btns"><button type="button" class="danger" id="btn-yes">Ya, hapus semua</button><button type="button" id="btn-no">Batal</button></div>
+        </div>
+        <div id="msg" role="status" aria-live="polite"></div>
+        <p class="saved">Isian tersimpan otomatis di peramban ini sampai Anda menekan Reset.</p>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div class="dock">
+  <span>Terisi <b id="d-count">0/40</b></span>
+  <button type="button" class="primary" id="btn-dl2">Unduh .docx</button>
+</div>
+
+<script>
+/* Lampiran Topik 7 - Clinical Leadership (NHS CLCF Self assessment tool):
+   data, perhitungan, interpretasi, dan pembuat .docx. Modul murni tanpa DOM. */
+(function (root) {
+  'use strict';
+
+  // ---------------------------------------------------------------- data instrumen
+  // Teks bahasa Inggris disalin dari: NHS Leadership Academy. Clinical Leadership Competency
+  // Framework: Self assessment tool. 2012 (hlm. 2-6, 8-12). Terjemahan (id) = terjemahan bebas untuk antarmuka.
+  var DOMAINS = [
+    { name: 'Demonstrating Personal Qualities', id: 'Menunjukkan kualitas pribadi', color: 'F7901E', light: 'FEDAB3', text: 'C96A06', ui: '#F7901E',
+      elements: [
+        { name: 'Developing Self Awareness', id: 'Mengembangkan kesadaran diri', st: [
+          ['I reflect on how my own values and principles influence my behaviour and impact on others', 'Saya merefleksikan bagaimana nilai dan prinsip saya memengaruhi perilaku saya dan dampaknya pada orang lain.'],
+          ['I seek feedback from others on my strengths and limitations and modify my behaviour accordingly', 'Saya meminta umpan balik tentang kekuatan dan keterbatasan saya, lalu menyesuaikan perilaku saya.']] },
+        { name: 'Managing Yourself', id: 'Mengelola diri', st: [
+          ['I remain calm and focused under pressure', 'Saya tetap tenang dan fokus di bawah tekanan.'],
+          ['I plan my workload and deliver on my commitments to consistently high standards demonstrating flexibility to service requirements', 'Saya merencanakan beban kerja dan memenuhi komitmen dengan standar tinggi secara konsisten, sambil tetap luwes terhadap kebutuhan layanan.']] },
+        { name: 'Continuing Personal Development', id: 'Pengembangan diri berkelanjutan', st: [
+          ['I actively seek opportunities to learn and develop', 'Saya aktif mencari kesempatan untuk belajar dan berkembang.'],
+          ['I apply my learning to practical work', 'Saya menerapkan hasil belajar dalam pekerjaan sehari-hari.']] },
+        { name: 'Acting with Integrity', id: 'Bertindak dengan integritas', st: [
+          ['I act in an open, honest and inclusive manner - respecting other people’s culture, beliefs and abilities', 'Saya bertindak terbuka, jujur, dan inklusif dengan menghormati budaya, keyakinan, dan kemampuan orang lain.'],
+          ['I speak out when I see that ethics or values are being compromised', 'Saya bersuara ketika melihat etika atau nilai dilanggar.']] }
+      ] },
+    { name: 'Working with Others', id: 'Bekerja dengan orang lain', color: 'EF3829', light: 'FBC2AB', text: 'D0281A', ui: '#EF3829',
+      elements: [
+        { name: 'Developing Networks', id: 'Mengembangkan jejaring', st: [
+          ['I identify opportunities where working collaboratively with others will bring added value to patient care', 'Saya mengenali peluang ketika kolaborasi dengan pihak lain memberi nilai tambah bagi pelayanan pasien.'],
+          ['I share information and resources across networks', 'Saya berbagi informasi dan sumber daya di dalam jejaring.']] },
+        { name: 'Building and Maintaining Relationships', id: 'Membangun dan memelihara hubungan', st: [
+          ['I communicate clearly and effectively with others', 'Saya berkomunikasi dengan jelas dan efektif dengan orang lain.'],
+          ['I listen to and take into account the needs and feelings of others', 'Saya mendengarkan dan mempertimbangkan kebutuhan serta perasaan orang lain.']] },
+        { name: 'Encouraging Contribution', id: 'Mendorong kontribusi', st: [
+          ['I actively seek contributions and views from others', 'Saya aktif meminta kontribusi dan pandangan orang lain.'],
+          ['I am comfortable managing conflicts of interests or differences of opinion', 'Saya nyaman mengelola konflik kepentingan atau perbedaan pendapat.']] },
+        { name: 'Working within Teams', id: 'Bekerja dalam tim', st: [
+          ['I put myself forward to lead teams, whilst always ensuring I involve the right people at the right time', 'Saya mengajukan diri untuk memimpin tim sambil memastikan orang yang tepat terlibat pada waktu yang tepat.'],
+          ['I acknowledge and appreciate the efforts of others within the team and respect the team’s decision', 'Saya mengakui dan menghargai upaya anggota tim lain serta menghormati keputusan tim.']] }
+      ] },
+    { name: 'Managing Services', id: 'Mengelola layanan', color: '9286BB', light: 'C6C0DD', text: '5E5199', ui: '#7E72B0',
+      elements: [
+        { name: 'Planning', id: 'Perencanaan', st: [
+          ['I use feedback from patients, service users and colleagues when developing plans', 'Saya memakai umpan balik pasien, pengguna layanan, dan kolega saat menyusun rencana.'],
+          ['I assess the available options in terms of benefits and risks', 'Saya menilai pilihan yang tersedia dari sisi manfaat dan risikonya.']] },
+        { name: 'Managing Resources', id: 'Mengelola sumber daya', st: [
+          ['I deliver safe and effective services within the allocated resource', 'Saya memberikan layanan yang aman dan efektif dengan sumber daya yang dialokasikan.'],
+          ['I take action when resources are not being used efficiently and effectively', 'Saya bertindak ketika sumber daya tidak digunakan secara efisien dan efektif.']] },
+        { name: 'Managing People', id: 'Mengelola orang', st: [
+          ['I support team members in developing their roles and responsibilities', 'Saya mendukung anggota tim mengembangkan peran dan tanggung jawabnya.'],
+          ['I provide others with clear purpose and direction', 'Saya memberi orang lain tujuan dan arahan yang jelas.']] },
+        { name: 'Managing Performance', id: 'Mengelola kinerja', st: [
+          ['I analyse information from a range of sources about performance', 'Saya menganalisis informasi kinerja dari berbagai sumber.'],
+          ['I take action to improve performance', 'Saya bertindak untuk memperbaiki kinerja.']] }
+      ] },
+    { name: 'Improving Services', id: 'Memperbaiki layanan', color: '67BD49', light: 'D0E7C3', text: '3F8A27', ui: '#4E9F33',
+      elements: [
+        { name: 'Ensuring Patient Safety', id: 'Menjamin keselamatan pasien', st: [
+          ['I take action when I notice shortfalls in patient safety', 'Saya bertindak ketika melihat kekurangan dalam keselamatan pasien.'],
+          ['I review practice to improve patient safety and minimise risk', 'Saya meninjau praktik untuk meningkatkan keselamatan pasien dan menekan risiko.']] },
+        { name: 'Critically Evaluating', id: 'Mengevaluasi secara kritis', st: [
+          ['I use feedback from patients, carers and service users to contribute to improvements in service delivery', 'Saya memakai umpan balik pasien, pelaku rawat, dan pengguna layanan untuk memperbaiki pemberian layanan.'],
+          ['I work with others to constructively evaluate our services', 'Saya bekerja sama dengan orang lain untuk mengevaluasi layanan kami secara konstruktif.']] },
+        { name: 'Encouraging Improvement and Innovation', id: 'Mendorong perbaikan dan inovasi', st: [
+          ['I put forward ideas to improve the quality of services', 'Saya mengajukan gagasan untuk meningkatkan mutu layanan.'],
+          ['I encourage debate about new ideas with a wide range of people', 'Saya mendorong diskusi tentang gagasan baru dengan beragam pihak.']] },
+        { name: 'Facilitating Transformation', id: 'Memfasilitasi transformasi', st: [
+          ['I articulate the need for change and its impact on people and services', 'Saya menjelaskan kebutuhan akan perubahan serta dampaknya pada orang dan layanan.'],
+          ['I focus myself and motivate others to ensure change happens', 'Saya memusatkan diri dan memotivasi orang lain agar perubahan benar-benar terjadi.']] }
+      ] },
+    { name: 'Setting Direction', id: 'Menetapkan arah', color: '00B0DB', light: 'B1E2F2', text: '0083A8', ui: '#0096BC',
+      elements: [
+        { name: 'Identifying the Contexts for Change', id: 'Mengenali konteks perubahan', st: [
+          ['I identify the drivers of change (e.g. political, social, technical, economic, organisational, professional environment)', 'Saya mengenali pendorong perubahan (misalnya lingkungan politik, sosial, teknis, ekonomi, organisasi, dan profesi).'],
+          ['I anticipate future challenges that will create the need for change and communicate these to others', 'Saya mengantisipasi tantangan mendatang yang menuntut perubahan dan mengomunikasikannya kepada orang lain.']] },
+        { name: 'Applying Knowledge and Evidence', id: 'Menerapkan pengetahuan dan bukti', st: [
+          ['I use data and information to suggest improvements to services', 'Saya memakai data dan informasi untuk mengusulkan perbaikan layanan.'],
+          ['I influence others to use knowledge and evidence to achieve best practice', 'Saya memengaruhi orang lain agar memakai pengetahuan dan bukti untuk mencapai praktik terbaik.']] },
+        { name: 'Making Decisions', id: 'Mengambil keputusan', st: [
+          ['I consult with key people and groups when making decisions taking into account the values and priorities of the service', 'Saya berkonsultasi dengan orang dan kelompok kunci saat mengambil keputusan, dengan mempertimbangkan nilai dan prioritas layanan.'],
+          ['I actively engage in formal and informal decision-making processes about the future of services', 'Saya terlibat aktif dalam proses pengambilan keputusan formal dan informal tentang masa depan layanan.']] },
+        { name: 'Evaluating Impact', id: 'Mengevaluasi dampak', st: [
+          ['I take responsibility for embedding new approaches into working practices', 'Saya bertanggung jawab menanamkan pendekatan baru ke dalam praktik kerja.'],
+          ['I evaluate the impact of changes on patients and service delivery', 'Saya mengevaluasi dampak perubahan pada pasien dan pemberian layanan.']] }
+      ] }
+  ];
+  // nomor pernyataan 1-40 berurutan
+  var STATEMENTS = [];
+  DOMAINS.forEach(function (d, di) {
+    d.no = di + 1;
+    d.elements.forEach(function (e, ei) {
+      e.no = ei + 1; e.items = [];
+      e.st.forEach(function (s) { STATEMENTS.push({ n: STATEMENTS.length + 1, en: s[0], id: s[1], d: di, e: ei }); e.items.push(STATEMENTS.length); });
+    });
+    d.items = []; d.elements.forEach(function (e) { d.items = d.items.concat(e.items); });
+  });
+
+  var RATINGS = [
+    { v: 'g', en: 'A lot of the time', id: 'Sebagian besar waktu', color: 'Hijau', hex: '3A9A3A', tint: 'D5ECCB' },
+    { v: 'o', en: 'Some of the time', id: 'Kadang-kadang', color: 'Oranye', hex: 'E8890C', tint: 'FCE0BC' },
+    { v: 'r', en: 'Very little / None of the time', id: 'Sangat jarang / tidak pernah', color: 'Merah', hex: 'D7322A', tint: 'F7CDC9' }
+  ];
+  var RATERS = [
+    { id: 'diri', label: 'Diri sendiri' },
+    { id: 'atasan', label: 'Atasan (line manager)' },
+    { id: 'mentor', label: 'Mentor' },
+    { id: 'rekan', label: 'Rekan kerja' }
+  ];
+  // Rencana aksi pribadi (hlm. 8-12): label dan batas karakter sesuai PDF.
+  var PLAN_P1 = [
+    { key: 'strengths', head: 'Key strengths', label: 'Please summarise your key strengths', hint: 'Max characters (750)', max: 750 },
+    { key: 'priorities', head: 'Key priorities', label: 'Please summarise your key development needs', hint: 'Max characters (750)', max: 750 }
+  ];
+  var PLAN_NEED = [
+    { key: 'reason', label: 'Reason for choosing', hint: 'Max characters (750)', max: 750 },
+    { key: 'goal', label: 'Goal', hint: 'Max characters (750)\nDescribe the desired new behaviour in SMART terms', max: 750 },
+    { key: 'benefits', label: 'Benefits', hint: 'Max characters (750)\nDescribe the benefits of reaching this goal', max: 750 },
+    { key: 'risks', label: 'Risks', hint: 'Max characters (750)\nOutline any risks that might be involved in reaching this goal', max: 750 },
+    { key: 'obstacles', label: 'Obstacles', hint: 'Max characters (500)\nOutline any potential obstacles', max: 500 },
+    { key: 'overcome', label: 'How are you going to over come them?', hint: 'Max characters (500)', max: 500 },
+    { key: 'resources', label: 'Resources/ support needed', hint: 'Max characters (750)', max: 750 },
+    { key: 'where', label: 'Where available?', hint: 'Max characters (750)', max: 750 }
+  ];
+  var APPROACHES = ['Experience', 'Exposure', 'Education'];
+  var MAX_STEPS = 6, STEP_MAX = 1000, NEED_MAX = 150;
+
+  var REFS = [
+    { text: 'NHS Leadership Academy. Clinical leadership competency framework: self assessment tool. NHS Leadership Academy; 2012. (Berkas PDF yang dirujuk BRP; hlm. 2–12.)' },
+    { text: 'Werdhani RA. Buku rancangan pengajaran modul pelayanan primer paripurna dengan pendekatan keluarga dan komunitas 2. Jakarta: Program Studi Spesialis Kedokteran Keluarga Layanan Primer, Fakultas Kedokteran Universitas Indonesia; 2026. Lampiran Topik 7, Clinical leadership.' }
+  ];
+  var BULAN = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+  // ---------------------------------------------------------------- utilitas
+  function joinID(arr) {
+    if (arr.length === 0) return '';
+    if (arr.length === 1) return arr[0];
+    if (arr.length === 2) return arr[0] + ' dan ' + arr[1];
+    return arr.slice(0, -1).join(', ') + ', dan ' + arr[arr.length - 1];
+  }
+  function tanggalID(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    if (!m) return '';
+    var mo = parseInt(m[2], 10);
+    if (mo < 1 || mo > 12) return '';
+    return parseInt(m[3], 10) + ' ' + BULAN[mo - 1] + ' ' + m[1];
+  }
+  function pct(n, d) { return d ? Math.round(n / d * 100) : 0; }
+  function valid(v) { return v === 'g' || v === 'o' || v === 'r'; }
+
+  // ---------------------------------------------------------------- perhitungan
+  // Sesuai PDF: tidak ada bobot angka; "Total your scores" = menjumlahkan lingkaran hijau, oranye, dan merah per ranah
+  // (bidang isian asli: "P2 Green Total", "P2 Orange Total", "P2 Red Total").
+  // "mainly red and orange" dioperasionalkan sebagai lebih dari separuh pernyataan ranah (>= 5 dari 8).
+  function compute(answers) {
+    var a = [];
+    for (var i = 0; i < 40; i++) a.push(answers && valid(answers[i]) ? answers[i] : null);
+    var tally = function (idx) {
+      var t = { g: 0, o: 0, r: 0, n: idx.length, answered: 0 };
+      idx.forEach(function (n) { var v = a[n - 1]; if (v) { t[v]++; t.answered++; } });
+      t.or = t.o + t.r; t.complete = t.answered === t.n;
+      return t;
+    };
+    var domains = DOMAINS.map(function (d) {
+      var t = tally(d.items);
+      t.no = d.no; t.name = d.name; t.idName = d.id;
+      t.status = !t.complete ? null : (t.or >= 5 ? 'kembang' : (t.g >= 5 ? 'kuat' : 'seimbang'));
+      t.elements = d.elements.map(function (e) {
+        var te = tally(e.items); te.name = e.name; te.idName = e.id; te.domain = d.no; te.items = e.items; return te;
+      });
+      return t;
+    });
+    var all = tally(STATEMENTS.map(function (s) { return s.n; }));
+    var missing = [];
+    a.forEach(function (v, i) { if (!v) missing.push(i + 1); });
+    var res = { answers: a, domains: domains, all: all, answered: all.answered, complete: all.complete, missing: missing };
+    // urutan prioritas: oranye+merah terbanyak, lalu merah terbanyak, lalu urutan ranah
+    res.priority = domains.slice().sort(function (x, y) { return (y.or - x.or) || (y.r - x.r) || (x.no - y.no); });
+    return res;
+  }
+  var STATUS = {
+    kembang: { label: 'Area pengembangan', note: 'Mayoritas oranye/merah' },
+    kuat: { label: 'Kekuatan', note: 'Mayoritas hijau; periksa overplayed strength' },
+    seimbang: { label: 'Seimbang', note: '4 hijau dan 4 oranye/merah' }
+  };
+
+  // ---------------------------------------------------------------- interpretasi
+  function dLabel(t) { return 'Ranah ' + t.no + ' (' + t.name + ')'; }
+  function interpret(res, rater) {
+    if (!res.complete) return null;
+    var out = [], sec = function (title, paras) { out.push({ title: title, paras: paras }); };
+    var A = res.all;
+    sec('Cara membaca hasil', [[
+      { t: 'Alat ini tidak memberi bobot angka. Petunjuknya meminta pengisi menjumlahkan lingkaran hijau, oranye, dan merah pada setiap ranah, lalu merefleksikan hasilnya.' }, { sup: '1' },
+      { t: ' Dari 40 pernyataan, tercatat ' + A.g + ' hijau (' + pct(A.g, 40) + '%), ' + A.o + ' oranye (' + pct(A.o, 40) + '%), dan ' + A.r + ' merah (' + pct(A.r, 40) + '%).' }
+    ]]);
+
+    var kem = res.domains.filter(function (d) { return d.status === 'kembang'; });
+    var kuat = res.domains.filter(function (d) { return d.status === 'kuat'; });
+    var seim = res.domains.filter(function (d) { return d.status === 'seimbang'; });
+    var p1 = [{ t: 'Menurut alat ini, ranah yang sebagian besar berisi lingkaran merah dan oranye dapat menjadi area yang ingin dikembangkan lebih lanjut.' }, { sup: '1' },
+      { t: ' Aplikasi menafsirkan “sebagian besar” sebagai lebih dari separuh pernyataan ranah, yaitu sedikitnya 5 dari 8. ' }];
+    if (kem.length) p1.push({ t: 'Kriteria ini terpenuhi pada ' + joinID(kem.map(function (d) { return dLabel(d) + ' dengan ' + d.or + ' oranye/merah'; })) + '.' });
+    else p1.push({ t: 'Tidak ada ranah yang memenuhi kriteria ini.' });
+    sec('Ranah yang dapat dikembangkan', [p1]);
+
+    var p2 = [];
+    if (kuat.length) {
+      p2.push({ t: 'Ranah dengan mayoritas hijau adalah ' + joinID(kuat.map(function (d) { return dLabel(d) + ' (' + d.g + ' hijau)'; })) + '. ' });
+    } else {
+      p2.push({ t: 'Tidak ada ranah dengan mayoritas hijau. ' });
+    }
+    p2.push({ t: 'Alat ini meminta pengisi memeriksa apakah lingkaran hijau bukan kekuatan yang berlebihan (overplayed strength), yaitu perilaku yang terlalu diandalkan dan dapat berdampak negatif pada kinerja.' }, { sup: '1' });
+    if (seim.length) p2.push({ t: ' ' + joinID(seim.map(dLabel)) + ' berimbang, dengan 4 hijau dan 4 oranye/merah.' });
+    sec('Kekuatan dan keseimbangan', [p2]);
+
+    var both = [], reds = [];
+    res.domains.forEach(function (d) {
+      d.elements.forEach(function (e) {
+        if (e.or === 2) both.push(e.name + ' (ranah ' + d.no + ')');
+        if (e.r > 0) reds.push(e.name + ' (' + e.r + ' merah)');
+      });
+    });
+    var p3 = [];
+    if (both.length) p3.push({ t: 'Elemen yang kedua pernyataannya berwarna oranye atau merah: ' + joinID(both) + '.' });
+    else p3.push({ t: 'Tidak ada elemen yang kedua pernyataannya berwarna oranye atau merah.' });
+    if (reds.length) p3.push({ t: ' Elemen yang memuat jawaban merah: ' + joinID(reds) + '.' });
+    sec('Elemen yang perlu perhatian', [p3]);
+
+    var top = res.priority.filter(function (d) { return d.or > 0; });
+    var p4 = [];
+    if (top.length) {
+      p4.push({ t: 'Bila diurutkan menurut jumlah oranye dan merah (lalu jumlah merah), urutan ranah adalah ' + joinID(top.map(function (d) { return 'ranah ' + d.no + ' (' + d.or + ')'; })) + '. Urutan ini dibuat aplikasi untuk membantu memilih development need pada rencana aksi; alat aslinya tidak menetapkan urutan prioritas.' });
+    } else {
+      p4.push({ t: 'Seluruh pernyataan dijawab hijau, sehingga urutan prioritas tidak dapat disusun dari jumlah oranye dan merah. Pemilihan development need dapat bertumpu pada pemeriksaan overplayed strength dan masukan atasan, mentor, atau kolega.' });
+    }
+    sec('Urutan prioritas pengembangan', [p4]);
+
+    var p5 = [{ t: 'Alat ini menganjurkan hasil penilaian dibicarakan dengan atasan, mentor, atau kolega tepercaya, dan menyebut bahwa penilaian dari atasan atau kolega dapat dibandingkan dengan penilaian diri. Rencana aksi pribadi disusun dalam istilah SMART (specific, measurable, action oriented, realistic, time bound) dan diberi tanggal evaluasi.' }, { sup: '1' }];
+    if (rater && rater !== 'diri') p5.push({ t: ' Formulir ini diisi oleh penilai lain, sehingga hasilnya dapat disandingkan dengan penilaian diri pada formulir terpisah.' });
+    sec('Langkah berikutnya', [p5]);
+
+    sec('Batasan', [[{ t: 'Alat ini dirancang untuk refleksi dan pengembangan diri. Alat ini tidak memuat nilai ambang, norma pembanding, atau kategori baik dan buruk, sehingga jumlah warna tidak dapat dibaca sebagai nilai kelulusan.' }, { sup: '1' }]]);
+    return out;
+  }
+
+  // saran teks untuk rencana aksi (hanya disisipkan bila pengguna menekan tombol)
+  function suggest(res) {
+    if (!res.complete) return null;
+    var kuat = res.domains.filter(function (d) { return d.g >= 5; }).map(function (d) {
+      var els = d.elements.filter(function (e) { return e.g === 2; }).map(function (e) { return e.name; });
+      return d.name + ' (' + d.g + '/8 hijau' + (els.length ? '; elemen: ' + els.join(', ') : '') + ')';
+    });
+    var dev = res.priority.filter(function (d) { return d.or > 0; }).slice(0, 2).map(function (d) {
+      var els = d.elements.filter(function (e) { return e.or > 0; }).map(function (e) { return e.name; });
+      return d.name + ' (' + d.or + '/8 oranye/merah' + (els.length ? '; elemen: ' + els.join(', ') : '') + ')';
+    });
+    return { strengths: kuat.length ? 'Ranah dengan mayoritas hijau: ' + kuat.join('; ') + '.' : '',
+      priorities: dev.length ? 'Ranah dengan oranye/merah terbanyak: ' + dev.join('; ') + '.' : '' };
+  }
+
+  // ---------------------------------------------------------------- XML helpers
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+      .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F￾￿]/g, '');
+  }
+  var FONT = 'Calibri', SYM = 'Segoe UI Symbol', INK = '231F20', BLUE = '007BC3', GREY = '6D6E71';
+  function rPr(o) {
+    o = o || {};
+    var f = o.font || FONT, x = '';
+    if (o.style) x += '<w:rStyle w:val="' + o.style + '"/>';
+    x += '<w:rFonts w:ascii="' + f + '" w:hAnsi="' + f + '" w:cs="' + f + '" w:eastAsia="' + f + '"/>';
+    if (o.b) x += '<w:b/><w:bCs/>';
+    if (o.i) x += '<w:i/><w:iCs/>';
+    if (o.caps) x += '<w:caps/>';
+    x += '<w:color w:val="' + (o.color || INK) + '"/>';
+    var sz = o.sz || 20;
+    x += '<w:sz w:val="' + sz + '"/><w:szCs w:val="' + sz + '"/>';
+    if (o.u) x += '<w:u w:val="single"/>';
+    if (o.sup) x += '<w:vertAlign w:val="superscript"/>';
+    return '<w:rPr>' + x + '</w:rPr>';
+  }
+  function run(text, o) {
+    var x = '';
+    String(text).split('\n').forEach(function (p, i) {
+      if (i > 0) x += '<w:br/>';
+      p.split('\t').forEach(function (t, j) {
+        if (j > 0) x += '<w:tab/>';
+        if (t.length) x += '<w:t xml:space="preserve">' + esc(t) + '</w:t>';
+      });
+    });
+    return '<w:r>' + rPr(o) + x + '</w:r>';
+  }
+  function runs(list, base) {
+    return list.map(function (s) {
+      var o = Object.assign({}, base);
+      ['b', 'i', 'u', 'color', 'sz', 'font'].forEach(function (k) { if (s[k] !== undefined) o[k] = s[k]; });
+      if (s.sup) { o.sup = true; return run(s.sup, o); }
+      return run(s.t, o);
+    }).join('');
+  }
+  function pPr(o) {
+    o = o || {};
+    var x = '';
+    if (o.keepNext) x += '<w:keepNext/>';
+    if (o.keepLines) x += '<w:keepLines/>';
+    if (o.pageBreakBefore) x += '<w:pageBreakBefore/>';
+    if (o.border) x += '<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="4" w:color="' + o.border + '"/></w:pBdr>';
+    if (o.tabs) x += '<w:tabs>' + o.tabs.map(function (t) { return '<w:tab w:val="' + (t.val || 'left') + '" w:pos="' + t.pos + '"/>'; }).join('') + '</w:tabs>';
+    var sp = o.spacing || {};
+    x += '<w:spacing w:before="' + (sp.before || 0) + '" w:after="' + (sp.after === undefined ? 0 : sp.after) + '" w:line="' + (sp.line || 252) + '" w:lineRule="' + (sp.rule || 'auto') + '"/>';
+    if (o.ind) {
+      var a = '';
+      ['left', 'right', 'hanging', 'firstLine'].forEach(function (k) { if (o.ind[k] !== undefined) a += ' w:' + k + '="' + o.ind[k] + '"'; });
+      x += '<w:ind' + a + '/>';
+    }
+    if (o.jc) x += '<w:jc w:val="' + o.jc + '"/>';
+    x += rPr(o.mark || {});
+    return '<w:pPr>' + x + '</w:pPr>';
+  }
+  function para(inner, o) { return '<w:p>' + pPr(o) + (inner || '') + '</w:p>'; }
+  function P(list, o, base) { base = base || {}; o = Object.assign({}, o || {}); o.mark = { sz: base.sz || 20 }; return para(runs(list, base), o); }
+
+  var BRD = 'w:val="single" w:sz="4" w:space="0" w:color="8A8C8E"';
+  function tbl(rows, widths, o) {
+    o = o || {};
+    var total = widths.reduce(function (s, v) { return s + v; }, 0);
+    var b = o.noBorders ? '<w:tblBorders><w:top w:val="nil"/><w:left w:val="nil"/><w:bottom w:val="nil"/><w:right w:val="nil"/><w:insideH w:val="nil"/><w:insideV w:val="nil"/></w:tblBorders>'
+      : '<w:tblBorders><w:top ' + BRD + '/><w:left ' + BRD + '/><w:bottom ' + BRD + '/><w:right ' + BRD + '/><w:insideH ' + BRD + '/><w:insideV ' + BRD + '/></w:tblBorders>';
+    var x = '<w:tbl><w:tblPr><w:tblW w:w="' + total + '" w:type="dxa"/><w:tblInd w:w="0" w:type="dxa"/>' + b +
+      '<w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="40" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="40" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar>' +
+      '<w:tblLook w:val="0000" w:firstRow="0" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="0" w:noVBand="0"/></w:tblPr><w:tblGrid>' +
+      widths.map(function (w) { return '<w:gridCol w:w="' + w + '"/>'; }).join('') + '</w:tblGrid>';
+    rows.forEach(function (r) {
+      var tr = '<w:trPr><w:cantSplit/>' + (r.height ? '<w:trHeight w:val="' + r.height + '" w:hRule="atLeast"/>' : '') + (r.header ? '<w:tblHeader/>' : '') + '</w:trPr>';
+      var col = 0;
+      x += '<w:tr>' + tr + r.cells.map(function (c) {
+        var span = c.span || 1, w = 0;
+        for (var k = 0; k < span; k++) w += widths[col + k];
+        col += span;
+        var tc = '<w:tcW w:w="' + w + '" w:type="dxa"/>' + (span > 1 ? '<w:gridSpan w:val="' + span + '"/>' : '');
+        if (c.shd) tc += '<w:shd w:val="clear" w:color="auto" w:fill="' + c.shd + '"/>';
+        tc += '<w:vAlign w:val="' + (c.vAlign || 'center') + '"/>';
+        return '<w:tc><w:tcPr>' + tc + '</w:tcPr>' + c.xml + '</w:tc>';
+      }).join('') + '</w:tr>';
+    });
+    return x + '</w:tbl>';
+  }
+
+  // ---------------------------------------------------------------- dokumen
+  var NS_W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+  var NS_R = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+  var TW = 9638; // lebar teks A4 dengan margin 2 cm
+  var CHECK = '√';
+
+  function sp(o) { return { spacing: o }; }
+
+  function domainTable(d, t, answers) {
+    var W = [480, 5578, 1193, 1193, 1194];
+    var rows = [];
+    var hdr = function (rt) {
+      return { shd: 'F2F2F2', xml: P([{ t: '● ', color: rt.hex, font: SYM, sz: 20 }, { t: rt.en, b: true, sz: 17 }], { jc: 'center', keepNext: true }) };
+    };
+    rows.push({ header: true, height: 400, cells: [
+      { shd: 'F2F2F2', xml: P([{ t: 'No', b: true, sz: 17 }], { jc: 'center', keepNext: true }) },
+      { shd: 'F2F2F2', xml: P([{ t: 'Statement', b: true, sz: 17 }], { keepNext: true }) },
+      hdr(RATINGS[0]), hdr(RATINGS[1]), hdr(RATINGS[2])
+    ] });
+    rows.push({ height: 380, cells: [{ span: 5, shd: d.color, xml: P([{ t: d.name.toUpperCase(), b: true, sz: 21 }], { keepNext: true }) }] });
+    d.elements.forEach(function (e) {
+      rows.push({ height: 320, cells: [{ span: 5, shd: d.light, xml: P([{ t: e.name, b: true, sz: 20 }], { keepNext: true }) }] });
+      e.items.forEach(function (n) {
+        var v = answers[n - 1], s = STATEMENTS[n - 1];
+        var cells = [
+          { xml: P([{ t: String(n), sz: 18 }], { jc: 'center', keepNext: true }) },
+          { xml: P([{ t: s.en, sz: 18 }], { keepNext: true }) }
+        ];
+        RATINGS.forEach(function (rt) {
+          var on = v === rt.v;
+          cells.push({ shd: on ? rt.tint : undefined, xml: on ? P([{ t: CHECK, b: true, sz: 22 }], { jc: 'center', keepNext: true }) : P([], { jc: 'center', keepNext: true }) });
+        });
+        rows.push({ cells: cells });
+      });
+    });
+    rows.push({ height: 360, cells: [
+      { span: 2, shd: 'E6E7E8', xml: P([{ t: 'TOTAL', sz: 22 }]) },
+      { shd: 'E6E7E8', xml: P([{ t: String(t.g), b: true, sz: 22 }], { jc: 'center' }) },
+      { shd: 'E6E7E8', xml: P([{ t: String(t.o), b: true, sz: 22 }], { jc: 'center' }) },
+      { shd: 'E6E7E8', xml: P([{ t: String(t.r), b: true, sz: 22 }], { jc: 'center' }) }
+    ] });
+    return tbl(rows, W);
+  }
+
+  function documentXml(st, res, opt) {
+    var b = '';
+    b += P([{ t: 'LAMPIRAN TOPIK 7', b: true, sz: 32 }], { jc: 'center' });
+    b += P([{ t: 'CLINICAL LEADERSHIP', b: true, i: true, sz: 32 }], { jc: 'center', spacing: { after: 80 } });
+    b += P([{ t: 'Clinical Leadership Competency Framework – Self assessment tool', sz: 26, color: BLUE }], { jc: 'center' });
+    b += P([{ t: 'NHS Leadership Academy (2012); formulir terisi, versi ringkas', sz: 17, color: GREY }], { jc: 'center', spacing: { after: 160 } });
+
+    var rater = RATERS.filter(function (r) { return r.id === st.rater; })[0];
+    var idRows = [['Nama', st.nama.trim()], ['NPM', st.npm.trim()], ['Diisi oleh', rater ? rater.label : '']];
+    if (st.rater !== 'diri' && st.penilai && st.penilai.trim()) idRows.push(['Nama penilai', st.penilai.trim()]);
+    var tg = tanggalID(st.tanggal);
+    if (tg) idRows.push(['Tanggal pengisian', tg]);
+    b += tbl(idRows.map(function (r) {
+      return { cells: [{ shd: 'F2F2F2', xml: P([{ t: r[0], b: true }]) }, { xml: P([{ t: r[1] }]) }] };
+    }), [2400, TW - 2400]);
+
+    b += P([{ t: 'Petunjuk', b: true, sz: 22, color: BLUE }], { keepNext: true, spacing: { before: 200, after: 40 } });
+    b += P([{ t: 'Look at statements below: on the scale next to each statement, choose a rating that reflects how frequently it applies to you. Total your scores after each domain and reflect on how you have scored yourself.' }], { jc: 'both' });
+    b += P([{ t: 'Keterangan: tanda ' + CHECK + ' menandai pilihan pada setiap pernyataan. ' },
+      { t: '●', color: RATINGS[0].hex, font: SYM }, { t: ' hijau = A lot of the time; ' },
+      { t: '●', color: RATINGS[1].hex, font: SYM }, { t: ' oranye = Some of the time; ' },
+      { t: '●', color: RATINGS[2].hex, font: SYM }, { t: ' merah = Very little / None of the time. Baris TOTAL berisi jumlah pilihan pada setiap kolom.' }], { jc: 'both', spacing: { after: 120 } });
+
+    DOMAINS.forEach(function (d, i) {
+      b += P([{ t: d.no + '. ' + d.name, sz: 26, color: d.text }], { keepNext: true, spacing: { before: i === 0 ? 120 : 240, after: 60 } });
+      b += domainTable(d, res.domains[i], res.answers);
+    });
+
+    // ---- ringkasan perhitungan
+    b += P([{ t: 'Ringkasan Perhitungan', b: true, sz: 26, color: BLUE }], { keepNext: true, pageBreakBefore: true, spacing: { after: 80 } });
+    b += P([{ t: 'Total setiap ranah = jumlah pernyataan yang diberi tanda pada setiap warna (maksimal 8 per ranah, 40 untuk seluruh alat).' }], { keepNext: true, spacing: { after: 80 } });
+    var W = [3370, 1050, 1050, 1050, 1250, 1868];
+    var hc = function (t, sh) { return { shd: sh || 'F2F2F2', xml: P([{ t: t, b: true, sz: 18 }], { jc: 'center', keepNext: true }) }; };
+    var rows = [{ header: true, height: 400, cells: [hc('Ranah (domain)'), hc('Hijau', RATINGS[0].tint), hc('Oranye', RATINGS[1].tint), hc('Merah', RATINGS[2].tint), hc('Oranye + merah'), hc('Catatan')] }];
+    res.domains.forEach(function (t) {
+      rows.push({ cells: [
+        { xml: P([{ t: t.no + '. ' + t.name, sz: 18 }], { keepNext: true }) },
+        { xml: P([{ t: String(t.g), sz: 19 }], { jc: 'center', keepNext: true }) },
+        { xml: P([{ t: String(t.o), sz: 19 }], { jc: 'center', keepNext: true }) },
+        { xml: P([{ t: String(t.r), sz: 19 }], { jc: 'center', keepNext: true }) },
+        { xml: P([{ t: t.or + ' dari 8', sz: 19 }], { jc: 'center', keepNext: true }) },
+        { xml: P([{ t: STATUS[t.status].label, b: true, sz: 18 }], { jc: 'center', keepNext: true }) }
+      ] });
+    });
+    var A = res.all;
+    rows.push({ cells: [
+      { shd: 'E6E7E8', xml: P([{ t: 'TOTAL (40 pernyataan)', b: true, sz: 18 }]) },
+      { shd: 'E6E7E8', xml: P([{ t: A.g + ' (' + pct(A.g, 40) + '%)', b: true, sz: 18 }], { jc: 'center' }) },
+      { shd: 'E6E7E8', xml: P([{ t: A.o + ' (' + pct(A.o, 40) + '%)', b: true, sz: 18 }], { jc: 'center' }) },
+      { shd: 'E6E7E8', xml: P([{ t: A.r + ' (' + pct(A.r, 40) + '%)', b: true, sz: 18 }], { jc: 'center' }) },
+      { shd: 'E6E7E8', xml: P([{ t: A.or + ' dari 40', b: true, sz: 18 }], { jc: 'center' }) },
+      { shd: 'E6E7E8', xml: P([{ t: '', sz: 18 }]) }
+    ] });
+    b += tbl(rows, W);
+    b += P([{ t: 'Catatan: Area pengembangan = sedikitnya 5 dari 8 pernyataan oranye/merah; Kekuatan = sedikitnya 5 dari 8 hijau; Seimbang = 4 hijau dan 4 oranye/merah. Ambang “sedikitnya 5 dari 8” adalah tafsiran aplikasi atas kata “mainly” pada petunjuk alat.', sz: 17, color: GREY }], { jc: 'both', spacing: { before: 60, after: 120 } });
+
+    b += P([{ t: 'Interpretasi', b: true, sz: 26, color: BLUE }], { keepNext: true, spacing: { before: 120, after: 40 } });
+    interpret(res, st.rater).forEach(function (s) {
+      b += P([{ t: s.title, b: true }], { keepNext: true, spacing: { before: 120, after: 20 } });
+      s.paras.forEach(function (p) { b += P(p, { jc: 'both', keepLines: true }); });
+    });
+
+    if (opt.includePlan) b += planXml(st);
+
+    b += P([{ t: 'Sumber', b: true, sz: 22, color: BLUE }], { keepNext: true, spacing: { before: 240, after: 40 } });
+    REFS.forEach(function (r, i) {
+      b += P([{ t: (i + 1) + '.\t' + r.text, sz: 18 }], { tabs: [{ pos: 360 }], ind: { left: 360, hanging: 360 } });
+    });
+    b += P([{ t: 'Dokumen ini dibuat oleh aplikasi isian Lampiran Topik 7. Pernyataan, label kolom, dan judul rencana aksi memakai teks asli alat NHS; ringkasan dan interpretasi ditulis dalam bahasa Indonesia.', i: true, sz: 16, color: GREY }], { spacing: { before: 120 } });
+
+    b += '<w:sectPr><w:footerReference w:type="default" r:id="rIdFooter1"/><w:pgSz w:w="11906" w:h="16838"/>' +
+      '<w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="567" w:footer="567" w:gutter="0"/><w:cols w:space="720"/></w:sectPr>';
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:document xmlns:w="' + NS_W + '" xmlns:r="' + NS_R + '"><w:body>' + b + '</w:body></w:document>';
+  }
+
+  function labelCell(label, hint) {
+    var list = [{ t: label, b: true, sz: 19 }];
+    if (hint) list.push({ t: '\n' + hint, sz: 16, color: GREY });
+    return { vAlign: 'top', xml: P(list, { jc: 'right' }) };
+  }
+  function textCell(text) {
+    var t = (text || '').replace(/\r\n?/g, '\n').trim();
+    return { vAlign: 'top', xml: t ? P([{ t: t, sz: 19 }], { jc: 'left' }) : P([], {}) };
+  }
+  function planXml(st) {
+    var p = st.plan || {};
+    var x = '', LW = [2900, TW - 2900];
+    var bar = function (t) { return { cells: [{ span: 2, shd: 'ADC9E9', xml: P([{ t: t, b: true, sz: 24 }], { keepNext: true }) }], height: 440 }; };
+    x += P([{ t: 'Personal Action Plan', sz: 32, color: BLUE }], { pageBreakBefore: true, keepNext: true, border: BLUE, spacing: { after: 120 } });
+    x += P([{ t: 'Petunjuk penyusunan (ringkasan Hints and tips on action planning, alat NHS hlm. 7): ', b: true, sz: 18 },
+      { t: 'rumuskan rencana dalam istilah SMART; tentukan orang yang dapat diajak berdiskusi dan membantu; nilai hambatan dan cara mengatasinya; manfaatkan kekuatan yang dimiliki; kenali sumber daya internal dan eksternal; tulis langkah aksi beserta tanggal penyelesaiannya; tetapkan tanggal evaluasi kemajuan.', sz: 18 }], { jc: 'both', spacing: { after: 120 } });
+    x += P([{ t: 'Action Plan - part one', sz: 28, color: BLUE }], { keepNext: true, spacing: { after: 80 } });
+    PLAN_P1.forEach(function (f) {
+      x += tbl([bar(f.head), { height: 1400, cells: [labelCell(f.label, f.hint), textCell(p[f.key])] }], LW);
+      x += P([], { spacing: { after: 120 } });
+    });
+    var need = (p.need || '').trim();
+    x += P([{ t: 'Action Plan - part one continued', sz: 28, color: BLUE }], { keepNext: true, spacing: { before: 120, after: 80 } });
+    x += tbl([bar('Development Need: ' + need)].concat(PLAN_NEED.map(function (f) {
+      return { height: 1200, cells: [labelCell(f.label, f.hint), textCell(p[f.key])] };
+    })), LW);
+    x += P([], { spacing: { after: 120 } });
+    x += P([{ t: 'Action Plan - part two', sz: 28, color: BLUE }], { keepNext: true, spacing: { before: 120, after: 80 } });
+    var W = [5338, 2150, 2150];
+    var steps = (st.steps && st.steps.length ? st.steps : [{}, {}]);
+    var srows = [{ header: true, height: 440, cells: [
+      { shd: 'ADC9E9', xml: P([{ t: 'Action Steps max characters (1000)', b: true, sz: 19 }], { keepNext: true }) },
+      { shd: 'ADC9E9', xml: P([{ t: 'Approach', b: true, sz: 19 }], { jc: 'center', keepNext: true }) },
+      { shd: 'ADC9E9', xml: P([{ t: 'Target Date', b: true, sz: 19 }], { jc: 'center', keepNext: true }) }] }];
+    steps.forEach(function (s) {
+      var ap = s.approach || {};
+      var boxes = APPROACHES.map(function (a, i) {
+        return P([{ t: (ap[a] ? '☒' : '☐') + ' ', font: SYM, sz: 20 }, { t: a, sz: 19 }], {});
+      }).join('');
+      srows.push({ height: 1500, cells: [textCell(s.text), { vAlign: 'top', xml: boxes }, { vAlign: 'top', xml: P([{ t: tanggalID(s.date) || (s.date || ''), sz: 19 }], { jc: 'center' }) }] });
+    });
+    x += tbl(srows, W);
+    x += P([], { spacing: { after: 120 } });
+    x += tbl([bar('Review'), { height: 600, cells: [labelCell('When will you review your progress towards your goals? (Please specify a date).', ''), textCell(tanggalID(p.review) || '')] }], LW);
+    return x;
+  }
+
+  function stylesXml() {
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:styles xmlns:w="' + NS_W + '">' +
+      '<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri" w:eastAsia="Calibri"/><w:color w:val="' + INK + '"/><w:sz w:val="20"/><w:szCs w:val="20"/><w:lang w:val="id-ID" w:eastAsia="en-US" w:bidi="ar-SA"/></w:rPr></w:rPrDefault>' +
+      '<w:pPrDefault><w:pPr><w:spacing w:after="0" w:line="252" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>' +
+      '<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style>' +
+      '<w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont"><w:name w:val="Default Paragraph Font"/><w:uiPriority w:val="1"/><w:semiHidden/><w:unhideWhenUsed/></w:style>' +
+      '<w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table"/><w:uiPriority w:val="99"/><w:semiHidden/><w:unhideWhenUsed/><w:tblPr><w:tblInd w:w="0" w:type="dxa"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style>' +
+      '<w:style w:type="numbering" w:default="1" w:styleId="NoList"><w:name w:val="No List"/><w:uiPriority w:val="99"/><w:semiHidden/><w:unhideWhenUsed/></w:style>' +
+      '</w:styles>';
+  }
+  function settingsXml() {
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:settings xmlns:w="' + NS_W + '"><w:zoom w:percent="100"/><w:defaultTabStop w:val="720"/><w:characterSpacingControl w:val="doNotCompress"/>' +
+      '<w:compat><w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="15"/></w:compat></w:settings>';
+  }
+  function fontTableXml() {
+    var f = function (n, fam) { return '<w:font w:name="' + n + '"><w:charset w:val="00"/><w:family w:val="' + fam + '"/><w:pitch w:val="variable"/></w:font>'; };
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:fonts xmlns:w="' + NS_W + '">' + f('Calibri', 'swiss') + f('Segoe UI Symbol', 'swiss') + '</w:fonts>';
+  }
+  function footerXml() {
+    var inner = run('Clinical Leadership Competency Framework: Self assessment tool © 2012 NHS Leadership Academy. All rights reserved.\t', { sz: 15, color: GREY }) +
+      run('Halaman ', { sz: 15, color: GREY }) +
+      '<w:fldSimple w:instr=" PAGE   \\* MERGEFORMAT ">' + run('1', { b: true, sz: 18, color: BLUE }) + '</w:fldSimple>';
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:ftr xmlns:w="' + NS_W + '" xmlns:r="' + NS_R + '">' +
+      para(inner, { tabs: [{ val: 'right', pos: TW }], mark: { sz: 15 } }) + '</w:ftr>';
+  }
+  function relsDoc() {
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+      '<Relationship Id="rIdStyles" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>' +
+      '<Relationship Id="rIdSettings" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>' +
+      '<Relationship Id="rIdFonts" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/>' +
+      '<Relationship Id="rIdFooter1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml"/></Relationships>';
+  }
+  var CT = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">' +
+    '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/>' +
+    '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>' +
+    '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>' +
+    '<Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/>' +
+    '<Override PartName="/word/fontTable.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml"/>' +
+    '<Override PartName="/word/footer1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml"/>' +
+    '<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>' +
+    '<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>';
+  var RELS = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+    '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>' +
+    '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>' +
+    '<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>';
+  function coreXml(st, now) {
+    var iso = now.toISOString().replace(/\.\d{3}Z$/, 'Z');
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">' +
+      '<dc:title>Lampiran Topik 7 Clinical Leadership</dc:title><dc:creator>' + esc(st.nama.trim()) + '</dc:creator>' +
+      '<dcterms:created xsi:type="dcterms:W3CDTF">' + iso + '</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">' + iso + '</dcterms:modified></cp:coreProperties>';
+  }
+  var APP = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"><Application>Aplikasi Lampiran Topik 7</Application></Properties>';
+
+  // ---------------------------------------------------------------- ZIP (STORE) + CRC32
+  var CRC_T = (function () {
+    var t = new Uint32Array(256);
+    for (var n = 0; n < 256; n++) { var c = n; for (var k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; }
+    return t;
+  })();
+  function crc32(u8) { var c = 0xFFFFFFFF; for (var i = 0; i < u8.length; i++) c = CRC_T[(c ^ u8[i]) & 0xFF] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; }
+  function utf8(s) { return typeof TextEncoder !== 'undefined' ? new TextEncoder().encode(s) : new Uint8Array(Buffer.from(s, 'utf8')); }
+  function zip(files, d) {
+    var dosTime = (d.getHours() << 11) | (d.getMinutes() << 5) | Math.floor(d.getSeconds() / 2);
+    var dosDate = ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate();
+    var chunks = [], central = [], offset = 0;
+    files.forEach(function (f) {
+      var name = utf8(f.name), data = utf8(f.data), crc = crc32(data);
+      var h = new DataView(new ArrayBuffer(30));
+      h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true); h.setUint16(8, 0, true);
+      h.setUint16(10, dosTime, true); h.setUint16(12, dosDate, true); h.setUint32(14, crc, true);
+      h.setUint32(18, data.length, true); h.setUint32(22, data.length, true); h.setUint16(26, name.length, true); h.setUint16(28, 0, true);
+      chunks.push(new Uint8Array(h.buffer), name, data);
+      var c = new DataView(new ArrayBuffer(46));
+      c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x0800, true); c.setUint16(10, 0, true);
+      c.setUint16(12, dosTime, true); c.setUint16(14, dosDate, true); c.setUint32(16, crc, true); c.setUint32(20, data.length, true); c.setUint32(24, data.length, true);
+      c.setUint16(28, name.length, true); c.setUint16(30, 0, true); c.setUint16(32, 0, true); c.setUint16(34, 0, true); c.setUint16(36, 0, true);
+      c.setUint32(38, 0, true); c.setUint32(42, offset, true);
+      central.push(new Uint8Array(c.buffer), name);
+      offset += 30 + name.length + data.length;
+    });
+    var cdSize = central.reduce(function (s, a) { return s + a.length; }, 0);
+    var e = new DataView(new ArrayBuffer(22));
+    e.setUint32(0, 0x06054b50, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true);
+    e.setUint32(12, cdSize, true); e.setUint32(16, offset, true);
+    var all = chunks.concat(central, [new Uint8Array(e.buffer)]);
+    var out = new Uint8Array(all.reduce(function (s, a) { return s + a.length; }, 0)), p = 0;
+    all.forEach(function (a) { out.set(a, p); p += a.length; });
+    return out;
+  }
+
+  // ---------------------------------------------------------------- validasi & API
+  function validate(st) {
+    var errs = [];
+    if (!st.nama || !st.nama.trim()) errs.push({ field: 'nama', msg: 'Nama belum diisi.' });
+    else if (st.nama.trim().length > 150) errs.push({ field: 'nama', msg: 'Nama terlalu panjang (maksimal 150 karakter).' });
+    if (!st.npm || !st.npm.trim()) errs.push({ field: 'npm', msg: 'NPM belum diisi.' });
+    else if (!/^[0-9]{4,20}$/.test(st.npm.trim())) errs.push({ field: 'npm', msg: 'NPM hanya boleh berisi angka (4–20 digit).' });
+    if (!RATERS.some(function (r) { return r.id === st.rater; })) errs.push({ field: 'rater', msg: 'Pilihan "Diisi oleh" belum dipilih.' });
+    var res = compute(st.answers);
+    if (!res.complete) errs.push({ field: 'items', msg: (40 - res.answered) + ' pernyataan belum dijawab: nomor ' + joinID(res.missing.map(String)) + '.', missing: res.missing });
+    var p = st.plan || {};
+    PLAN_P1.concat(PLAN_NEED).forEach(function (f) {
+      if ((p[f.key] || '').length > f.max) errs.push({ field: 'plan-' + f.key, msg: f.label + ' melebihi ' + f.max + ' karakter.' });
+    });
+    if ((p.need || '').length > NEED_MAX) errs.push({ field: 'plan-need', msg: 'Development Need melebihi ' + NEED_MAX + ' karakter.' });
+    (st.steps || []).forEach(function (s, i) { if ((s.text || '').length > STEP_MAX) errs.push({ field: 'step-' + i, msg: 'Action step ' + (i + 1) + ' melebihi ' + STEP_MAX + ' karakter.' }); });
+    if ((st.steps || []).length > MAX_STEPS) errs.push({ field: 'steps', msg: 'Action step maksimal ' + MAX_STEPS + ' baris.' });
+    return errs;
+  }
+
+  function buildDocx(st, opt) {
+    opt = Object.assign({ includePlan: true, now: new Date() }, opt || {});
+    var errs = validate(st);
+    if (errs.length) { var e = new Error(errs.map(function (x) { return x.msg; }).join(' ')); e.errors = errs; throw e; }
+    var res = compute(st.answers);
+    return zip([
+      { name: '[Content_Types].xml', data: CT },
+      { name: '_rels/.rels', data: RELS },
+      { name: 'docProps/core.xml', data: coreXml(st, opt.now) },
+      { name: 'docProps/app.xml', data: APP },
+      { name: 'word/document.xml', data: documentXml(st, res, opt) },
+      { name: 'word/styles.xml', data: stylesXml() },
+      { name: 'word/settings.xml', data: settingsXml() },
+      { name: 'word/fontTable.xml', data: fontTableXml() },
+      { name: 'word/footer1.xml', data: footerXml() },
+      { name: 'word/_rels/document.xml.rels', data: relsDoc() }
+    ], opt.now);
+  }
+  function fileName(st) {
+    var s = (st.nama || '');
+    if (s.normalize) s = s.normalize('NFKD').replace(/[̀-ͯ]/g, '');
+    s = s.replace(/[^A-Za-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 60);
+    var npm = (st.npm || '').replace(/[^0-9]/g, '');
+    return 'Lampiran_Topik7_ClinicalLeadership' + (npm ? '_' + npm : '') + (s ? '_' + s : '') + '.docx';
+  }
+
+  var API = { DOMAINS: DOMAINS, STATEMENTS: STATEMENTS, RATINGS: RATINGS, RATERS: RATERS, STATUS: STATUS, PLAN_P1: PLAN_P1, PLAN_NEED: PLAN_NEED,
+    APPROACHES: APPROACHES, MAX_STEPS: MAX_STEPS, STEP_MAX: STEP_MAX, NEED_MAX: NEED_MAX, REFS: REFS,
+    compute: compute, interpret: interpret, suggest: suggest, validate: validate, buildDocx: buildDocx, fileName: fileName,
+    joinID: joinID, tanggalID: tanggalID, pct: pct };
+  if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.CL = API;
+})(typeof window !== 'undefined' ? window : this);
+
+</script>
+<script>
+(function () {
+  'use strict';
+  var CL = window.CL;
+  var KEY = 'lampiran7-clcf-v1';
+  var $ = function (id) { return document.getElementById(id); };
+  var PLAN_KEYS = CL.PLAN_P1.concat(CL.PLAN_NEED).map(function (f) { return f.key; }).concat(['need', 'review']);
+
+  function todayISO() {
+    var d = new Date(), p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  }
+  function blankStep() { return { text: '', approach: {}, date: '' }; }
+  function blank() {
+    var plan = {}; PLAN_KEYS.forEach(function (k) { plan[k] = ''; });
+    return { nama: '', npm: '', rater: 'diri', penilai: '', tanggal: todayISO(), answers: new Array(40).fill(null),
+      plan: plan, steps: [blankStep(), blankStep()], inclPlan: true, showTr: true };
+  }
+  function str(v) { return typeof v === 'string' ? v : ''; }
+
+  var st = blank();
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (raw) {
+      var d = JSON.parse(raw);
+      if (d && Array.isArray(d.answers) && d.answers.length === 40) {
+        st.nama = str(d.nama); st.npm = str(d.npm); st.penilai = str(d.penilai);
+        st.rater = CL.RATERS.some(function (r) { return r.id === d.rater; }) ? d.rater : 'diri';
+        st.tanggal = str(d.tanggal) || st.tanggal;
+        st.answers = d.answers.map(function (v) { return v === 'g' || v === 'o' || v === 'r' ? v : null; });
+        if (d.plan) PLAN_KEYS.forEach(function (k) { st.plan[k] = str(d.plan[k]); });
+        if (Array.isArray(d.steps) && d.steps.length) st.steps = d.steps.slice(0, CL.MAX_STEPS).map(function (s) {
+          var ap = {}; CL.APPROACHES.forEach(function (a) { ap[a] = !!(s && s.approach && s.approach[a]); });
+          return { text: str(s && s.text), approach: ap, date: str(s && s.date) };
+        });
+        st.inclPlan = d.inclPlan !== false; st.showTr = d.showTr !== false;
+      }
+    }
+  } catch (e) { /* penyimpanan tidak tersedia */ }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { /* abaikan */ } }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+  // ---------- render statis
+  $('raters').innerHTML = CL.RATERS.map(function (r) {
+    return '<label><input type="radio" name="rater" id="rater-' + r.id + '" value="' + r.id + '"><span>' + esc(r.label) + '</span></label>';
+  }).join('');
+
+  var h = '';
+  CL.DOMAINS.forEach(function (d) {
+    h += '<section class="domain" id="dom-' + d.no + '" style="--dc:' + d.ui + '" aria-labelledby="dh-' + d.no + '">' +
+      '<div class="dhead"><h2 id="dh-' + d.no + '"><span class="dn">' + d.no + '</span>' + esc(d.name) + '</h2>' +
+      '<span class="idn">' + esc(d.id) + '</span><span class="dtally" id="dt-' + d.no + '">0/8 terisi</span></div>';
+    d.elements.forEach(function (e) {
+      h += '<div class="el">' + esc(e.name) + '<small>' + esc(e.id) + '</small></div>';
+      e.items.forEach(function (n) {
+        var s = CL.STATEMENTS[n - 1];
+        h += '<div class="st" id="st-' + n + '" role="radiogroup" aria-labelledby="stt-' + n + '"><div class="q">' +
+          '<p class="en" id="stt-' + n + '"><span class="num">' + n + '</span><span>' + esc(s.en) + '</span></p>' +
+          '<p class="tr">' + esc(s.id) + '</p></div><div class="opts">' +
+          CL.RATINGS.map(function (r) {
+            return '<label class="opt ' + r.v + '"><input type="radio" name="q' + n + '" id="q' + n + '-' + r.v + '" value="' + r.v + '" aria-label="' + esc(r.en) + '"><span><i></i>' + esc(r.en) + '</span></label>';
+          }).join('') + '</div></div>';
+      });
+    });
+    h += '</section>';
+  });
+  $('domains').innerHTML = h;
+
+  $('dlist').innerHTML = CL.DOMAINS.map(function (d) {
+    return '<li style="--dc:' + d.ui + '"><span class="nm"><b>' + d.no + '</b>' + esc(d.name) + '</span><span class="ct" id="dc-' + d.no + '">0 / 0 / 0</span>' +
+      '<span class="stack" aria-hidden="true"><i class="sg" id="dg-' + d.no + '"></i><i class="so" id="do-' + d.no + '"></i><i class="sr" id="dr-' + d.no + '"></i></span>' +
+      '<span class="pillrow"><span class="pill none" id="dp-' + d.no + '">Belum lengkap</span> <span class="pnote" id="dn-' + d.no + '"></span></span></li>';
+  }).join('');
+
+  function fieldHtml(f, prefix, sugg) {
+    return '<div class="field" id="f-plan-' + f.key + '"><div class="lab"><label for="plan-' + f.key + '">' + esc(f.head ? f.head + ': ' + f.label : f.label) + '</label>' +
+      (sugg ? '<button type="button" class="linkbtn" data-sugg="' + f.key + '">Sisipkan saran dari hasil</button>' : '') +
+      '<span class="cnt" id="c-plan-' + f.key + '"></span></div>' +
+      '<textarea id="plan-' + f.key + '" maxlength="' + f.max + '" rows="3"></textarea>' +
+      (f.hint.indexOf('\n') > -1 ? '<span class="hint">' + esc(f.hint.split('\n')[1]) + '</span>' : '') + '</div>';
+  }
+  $('p1').innerHTML = '<div class="col" style="gap:14px">' + CL.PLAN_P1.map(function (f) { return fieldHtml(f, 'p1', true); }).join('') + '</div>';
+  $('pneed').innerHTML = CL.PLAN_NEED.map(function (f) { return fieldHtml(f); }).join('');
+  $('refs').innerHTML = CL.REFS.map(function (r) { return '<li>' + esc(r.text) + '</li>'; }).join('');
+
+  function renderSteps() {
+    $('steps').innerHTML = st.steps.map(function (s, i) {
+      return '<div class="step" id="step-' + i + '"><div class="head"><span>Action step ' + (i + 1) + '</span>' +
+        (st.steps.length > 1 ? '<button type="button" class="small" data-del="' + i + '" aria-label="Hapus action step ' + (i + 1) + '">Hapus</button>' : '') + '</div>' +
+        '<div class="field"><textarea id="step-text-' + i + '" data-step="' + i + '" maxlength="' + CL.STEP_MAX + '" rows="4" aria-label="Action step ' + (i + 1) + '">' + esc(s.text) + '</textarea>' +
+        '<span class="cnt" id="c-step-' + i + '">' + s.text.length + '/' + CL.STEP_MAX + '</span></div>' +
+        '<div class="side"><div class="ap" role="group" aria-label="Approach">' + CL.APPROACHES.map(function (a) {
+          return '<label><input type="checkbox" id="step-' + i + '-' + a + '" data-step="' + i + '" data-ap="' + a + '"' + (s.approach[a] ? ' checked' : '') + '> ' + a + '</label>';
+        }).join('') + '</div><div class="field"><label for="step-date-' + i + '" style="font-weight:700;font-size:13px">Target Date</label>' +
+        '<input type="date" id="step-date-' + i + '" data-step="' + i + '" data-date="1" value="' + esc(s.date) + '"></div></div></div>';
+    }).join('');
+    $('add-step').disabled = st.steps.length >= CL.MAX_STEPS;
+  }
+
+  function counter(key, max) {
+    var el = $('c-plan-' + key), v = st.plan[key] || '';
+    if (el) { el.textContent = v.length + '/' + max; el.classList.toggle('full', v.length >= max); }
+  }
+  function fillForm() {
+    $('nama').value = st.nama; $('npm').value = st.npm; $('penilai').value = st.penilai; $('tanggal').value = st.tanggal || '';
+    $('inclplan').checked = st.inclPlan; $('showtr').checked = st.showTr;
+    $('formcol').classList.toggle('hide-tr', !st.showTr);
+    CL.RATERS.forEach(function (r) { $('rater-' + r.id).checked = st.rater === r.id; });
+    for (var n = 1; n <= 40; n++) CL.RATINGS.forEach(function (r) { $('q' + n + '-' + r.v).checked = st.answers[n - 1] === r.v; });
+    CL.PLAN_P1.concat(CL.PLAN_NEED).forEach(function (f) { $('plan-' + f.key).value = st.plan[f.key]; counter(f.key, f.max); });
+    $('plan-need').value = st.plan.need; counter('need', CL.NEED_MAX);
+    $('plan-review').value = st.plan.review;
+    renderSteps();
+  }
+
+  function segsHtml(list) {
+    return list.map(function (s) { return s.sup ? '<sup>' + esc(s.sup) + '</sup>' : (s.b ? '<strong>' + esc(s.t) + '</strong>' : esc(s.t)); }).join('');
+  }
+  function update() {
+    var res = CL.compute(st.answers);
+    $('p-count').textContent = res.answered + '/40'; $('d-count').textContent = res.answered + '/40';
+    ['g', 'o', 'r'].forEach(function (k) { $('s-' + k).style.width = (res.all[k] / 40 * 100).toFixed(2) + '%'; $('o-' + k).textContent = res.all[k]; });
+    for (var n = 1; n <= 40; n++) if (st.answers[n - 1]) $('st-' + n).classList.remove('missing');
+    res.domains.forEach(function (t) {
+      $('dt-' + t.no).textContent = t.answered + '/8 terisi · ' + t.g + ' hijau, ' + t.o + ' oranye, ' + t.r + ' merah';
+      $('dc-' + t.no).textContent = t.g + ' / ' + t.o + ' / ' + t.r;
+      ['g', 'o', 'r'].forEach(function (k) { $('d' + k + '-' + t.no).style.width = (t[k] / 8 * 100).toFixed(2) + '%'; });
+      var p = $('dp-' + t.no);
+      if (t.status) { p.textContent = CL.STATUS[t.status].label; p.className = 'pill ' + t.status; $('dn-' + t.no).textContent = CL.STATUS[t.status].note; }
+      else { p.textContent = 'Belum lengkap (' + t.answered + '/8)'; p.className = 'pill none'; $('dn-' + t.no).textContent = ''; }
+    });
+    var parts = CL.interpret(res, st.rater);
+    if (parts) {
+      $('interp').innerHTML = parts.map(function (s) { return '<h3>' + esc(s.title) + '</h3>' + s.paras.map(function (p) { return '<p>' + segsHtml(p) + '</p>'; }).join(''); }).join('');
+    } else {
+      $('interp').innerHTML = '<p class="empty">Interpretasi tersusun setelah ke-40 pernyataan terisi. ' + (40 - res.answered) + ' pernyataan belum dijawab.</p>';
+    }
+    document.querySelectorAll('[data-sugg]').forEach(function (b) { b.disabled = !res.complete; b.title = res.complete ? '' : 'Tersedia setelah 40 pernyataan terisi'; });
+    $('f-penilai').hidden = st.rater === 'diri';
+  }
+  function clearErr(f) { var el = $('f-' + f); if (el) el.classList.remove('invalid'); var e = $('e-' + f); if (e) e.textContent = ''; }
+
+  // ---------- event
+  $('nama').addEventListener('input', function (e) { st.nama = e.target.value; clearErr('nama'); save(); });
+  $('npm').addEventListener('input', function (e) { st.npm = e.target.value; clearErr('npm'); save(); });
+  $('penilai').addEventListener('input', function (e) { st.penilai = e.target.value; save(); });
+  $('tanggal').addEventListener('change', function (e) { st.tanggal = e.target.value; save(); });
+  $('inclplan').addEventListener('change', function (e) { st.inclPlan = e.target.checked; save(); });
+  $('showtr').addEventListener('change', function (e) { st.showTr = e.target.checked; $('formcol').classList.toggle('hide-tr', !st.showTr); save(); });
+  $('raters').addEventListener('change', function (e) { st.rater = e.target.value; clearErr('rater'); save(); update(); });
+  $('domains').addEventListener('change', function (e) {
+    var m = /^q(\d+)$/.exec(e.target.name || ''); if (!m) return;
+    st.answers[parseInt(m[1], 10) - 1] = e.target.value; save(); update();
+  });
+  $('plan').addEventListener('input', function (e) {
+    var t = e.target, m = /^plan-(.+)$/.exec(t.id || '');
+    if (m && m[1] !== 'review') { st.plan[m[1]] = t.value; var f = CL.PLAN_P1.concat(CL.PLAN_NEED).filter(function (x) { return x.key === m[1]; })[0]; counter(m[1], f ? f.max : CL.NEED_MAX); clearErr('plan-' + m[1]); save(); return; }
+    if (t.dataset.step !== undefined && t.tagName === 'TEXTAREA') {
+      var i = +t.dataset.step; st.steps[i].text = t.value; $('c-step-' + i).textContent = t.value.length + '/' + CL.STEP_MAX; save();
+    }
+  });
+  $('plan').addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.id === 'plan-review') { st.plan.review = t.value; save(); return; }
+    if (t.dataset.ap) { st.steps[+t.dataset.step].approach[t.dataset.ap] = t.checked; save(); return; }
+    if (t.dataset.date) { st.steps[+t.dataset.step].date = t.value; save(); }
+  });
+  $('plan').addEventListener('click', function (e) {
+    var t = e.target;
+    if (t.dataset.del !== undefined) { st.steps.splice(+t.dataset.del, 1); renderSteps(); save(); $('add-step').focus(); return; }
+    if (t.dataset.sugg) {
+      var s = CL.suggest(CL.compute(st.answers)); if (!s) return;
+      var k = t.dataset.sugg, f = CL.PLAN_P1.filter(function (x) { return x.key === k; })[0];
+      var add = s[k] || (k === 'strengths' ? 'Tidak ada ranah dengan mayoritas hijau.' : 'Tidak ada pernyataan oranye atau merah.');
+      var cur = st.plan[k] ? st.plan[k].replace(/\s+$/, '') + '\n' : '';
+      st.plan[k] = (cur + add).slice(0, f.max); $('plan-' + k).value = st.plan[k]; counter(k, f.max); save(); $('plan-' + k).focus();
+    }
+  });
+  $('add-step').addEventListener('click', function () {
+    if (st.steps.length >= CL.MAX_STEPS) return;
+    st.steps.push(blankStep()); renderSteps(); save(); $('step-text-' + (st.steps.length - 1)).focus();
+  });
+
+  function showMsg(kind, html) { $('msg').innerHTML = html ? '<div class="msg ' + kind + '">' + html + '</div>' : ''; }
+  var framed = !!(window.claude && typeof window.claude.use === 'function');
+  var dlCap = framed ? window.claude.use('downloads').catch(function () { return null; }) : Promise.resolve(null);
+  function fallbackDownload(bytes, name) {
+    var url = URL.createObjectURL(new Blob([bytes], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }));
+    var a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1500);
+  }
+  var busy = false;
+  function download() {
+    if (busy) return;
+    showMsg('', '');
+    document.querySelectorAll('.st.missing').forEach(function (el) { el.classList.remove('missing'); });
+    var errs = CL.validate(st);
+    if (errs.length) {
+      var first = null;
+      errs.forEach(function (er) {
+        if (er.field === 'items') {
+          er.missing.forEach(function (n) { $('st-' + n).classList.add('missing'); });
+          if (!first) first = $('q' + er.missing[0] + '-g');
+        } else {
+          var f = $('f-' + er.field); if (f) f.classList.add('invalid');
+          var e = $('e-' + er.field); if (e) e.textContent = er.msg;
+          if (!first) first = er.field === 'rater' ? $('rater-diri') : ($(er.field) || $(er.field.replace(/^f-/, '')));
+        }
+      });
+      showMsg('err', '<strong>Formulir belum dapat diunduh.</strong><ul>' + errs.map(function (er) { return '<li>' + esc(er.msg) + '</li>'; }).join('') + '</ul>');
+      if (first) {
+        var target = first.closest('.st') || first.closest('.field') || first;
+        target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+        try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); }
+      }
+      return;
+    }
+    var bytes, name = CL.fileName(st);
+    try { bytes = CL.buildDocx(st, { includePlan: st.inclPlan }); } catch (e) { showMsg('err', 'Berkas gagal dibuat: ' + esc(e.message)); return; }
+    busy = true; $('btn-dl').disabled = true; $('btn-dl2').disabled = true;
+    dlCap.then(function (dl) {
+      if (dl) {
+        return dl.save({ filename: name, data: new Blob([bytes]) }).then(function () {
+          showMsg('ok', 'Berkas <strong>' + esc(name) + '</strong> sudah diserahkan ke unduhan.');
+        }, function (err) {
+          var code = err && err.code;
+          if (code === 'declined') showMsg('err', 'Unduhan dibatalkan. Tekan Unduh .docx lagi bila ingin menyimpan berkas.');
+          else if (code === 'rate_limited') showMsg('err', 'Masih ada konfirmasi unduhan yang terbuka. Selesaikan dulu, lalu coba lagi.');
+          else showMsg('err', 'Unduhan tidak tersedia di tampilan ini (kode: ' + esc(code || 'unavailable') + ').');
+        });
+      }
+      if (framed) { showMsg('err', 'Unduhan tidak tersedia di tampilan ini. Buka artefak ini di claude.ai untuk mengunduh berkas.'); return; }
+      fallbackDownload(bytes, name);
+      showMsg('ok', 'Berkas <strong>' + esc(name) + '</strong> sedang diunduh.');
+    }).then(function () { busy = false; $('btn-dl').disabled = false; $('btn-dl2').disabled = false; });
+  }
+  $('btn-dl').addEventListener('click', download);
+  $('btn-dl2').addEventListener('click', download);
+  $('btn-reset').addEventListener('click', function () { $('btns').hidden = true; $('confirm').hidden = false; $('btn-no').focus(); });
+  $('btn-no').addEventListener('click', function () { $('confirm').hidden = true; $('btns').hidden = false; $('btn-reset').focus(); });
+  $('btn-yes').addEventListener('click', function () {
+    st = blank();
+    try { localStorage.removeItem(KEY); } catch (e) { /* abaikan */ }
+    fillForm();
+    ['nama', 'npm', 'rater'].forEach(clearErr);
+    document.querySelectorAll('.invalid').forEach(function (el) { el.classList.remove('invalid'); });
+    document.querySelectorAll('.st.missing').forEach(function (el) { el.classList.remove('missing'); });
+    $('confirm').hidden = true; $('btns').hidden = false;
+    update();
+    showMsg('ok', 'Semua isian sudah dikosongkan. Formulir siap diisi kembali.');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    $('nama').focus({ preventScroll: true });
+  });
+
+  fillForm();
+  update();
+})();
+
+</script>
+
+</body></html>
